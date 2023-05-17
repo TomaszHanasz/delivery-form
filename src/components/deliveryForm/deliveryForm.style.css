@@ -1,0 +1,81 @@
+.delivery-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.delivery-form-box {
+  flex-basis: 40%;
+  background-color: rgb(250, 245, 245);
+  padding: 30px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.long-input input {
+  width: 98%;
+}
+
+.medium-input input {
+  width: 47%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.delivery-form-container label {
+  display: block;
+  font-size: 1.3rem;
+  margin: 20px 0 0 5px;
+  width: 350px;
+}
+
+input {
+  font-size: 1.1rem;
+  margin: 0 auto 5px auto;
+  height: 3rem;
+  padding-left: 10px;
+  border-color: teal;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+input:checked {
+  accent-color: teal;
+}
+
+.signature {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.signature label,
+.signature input {
+  margin: 20px 10px;
+  flex-basis: 30%;
+}
+
+.sendBtn {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 20px 0 20px 0;
+  border-radius: 20px;
+  height: 50px;
+  width: 170px;
+  border-color: teal;
+}
