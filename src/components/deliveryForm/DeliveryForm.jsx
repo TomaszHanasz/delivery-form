@@ -16,10 +16,16 @@ const defaultDeliveryData = {
 
 const DeliveryForm = () => {
   const [deliveryData, setDeliveryData] = useState(defaultDeliveryData);
+  const [signature, setSignature] = useState("");
 
   const onSubmitHandler = (e) => {
     console.log(deliveryData);
     e.preventDefault();
+    if (deliveryData.isSignatureRequired) {
+      setSignature(`${deliveryData.firstName} ${deliveryData.lastName}`);
+    } else {
+      setSignature("");
+    }
   };
 
   const onChangeHandler = (e) => {
@@ -36,6 +42,9 @@ const DeliveryForm = () => {
   return (
     <div className="delivery-form-container">
       <div className="delivery-form-box">
+        {deliveryData.isSignatureRequired && (
+          <p className="signed">{signature}</p>
+        )}
         <h1>Delivery Confirmation Form</h1>
         <form onSubmit={onSubmitHandler}>
           <label forHtml="firstName">Name:</label>
@@ -95,14 +104,14 @@ const DeliveryForm = () => {
               <input
                 name="isSignatureRequired"
                 type="checkbox"
-                onClick={onCheckedHandler}
+                onChange={onCheckedHandler}
               />
               <label forHtml="isSignatureRequired">Signature</label>
             </div>
           </div>
           <br />
           <div className="sendBtn">
-            <button className="pushable">
+            <button className="pushable" type="submit">
               <span className="shadow"></span>
               <span className="edge"></span>
               <span className="front">Send</span>
